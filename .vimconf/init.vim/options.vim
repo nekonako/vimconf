@@ -1,9 +1,9 @@
 filetype on
 filetype plugin indent on
 
-au CursorHold,CursorHoldI * checktime " auto update trigger when cursor stops moving
-au FocusGained,BufEnter * :checktime  " auto update trigger on buffer change or terminal focus
-au BufRead /tmp/mutt-* set tw=72      " Configuring editors to work with mutt                  "
+au CursorHold,CursorHoldI * checktime
+au FocusGained,BufEnter * :checktime
+au BufRead /tmp/mutt-* set tw=72
 
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -23,12 +23,9 @@ set ttyfast
 set clipboard+=unnamedplus
 set completeopt=menuone,noselect,preview
 set conceallevel=0
-"set cursorcolumn
 set cursorline
 set directory=~/.local/share/nvim/swap
 set encoding=UTF-8
-set fileencoding=UTF-8
-set fileencodings=UTF-8
 set foldlevel=0
 set foldmethod=manual
 set formatoptions+=l
@@ -88,5 +85,4 @@ set autoread
 set modifiable
 
 let g:python3_host_prog       = '/usr/bin/python3'
-
 

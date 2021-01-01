@@ -8,11 +8,14 @@ if exists('g:plugs["coc.nvim"]')
         \ 'jinja2.html': 'html',
         \ 'wxss': 'css',
         \ 'sass': 'css',
+        \ 'jsx' :'js',
+        \ 'ts': 'js'
         \ }
   let g:coc_global_extensions=[
         \ 'coc-css',
         \ 'coc-emmet',
         \ 'coc-go',
+        \ 'coc-java',
         \ 'coc-html',
         \ 'coc-json',
         \ 'coc-marketplace',
@@ -21,6 +24,7 @@ if exists('g:plugs["coc.nvim"]')
         \ 'coc-python',
         \ 'coc-sh',
         \ 'coc-snippets',
+        \ 'coc-phpls',
         \ 'coc-tsserver',
         \ 'coc-vetur',
         \ 'coc-vimlsp',
@@ -148,7 +152,3 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-" }}}
-
-
-" }}}

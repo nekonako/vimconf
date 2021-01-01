@@ -8,7 +8,7 @@ let g:NERDTreeDirArrowExpandable = ""
 let g:NERDTreeDirArrowCollapsible = ""
 let g:NERDTreeWinSize=30
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeHighlightCursorline = 1
+let g:NERDTreeHighlightCursorline = 0
 autocmd FileType nerdtree setlocal signcolumn=no
 endif
 

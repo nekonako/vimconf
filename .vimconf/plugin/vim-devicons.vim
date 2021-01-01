@@ -20,8 +20,8 @@ if exists('g:plugs["vim-devicons"]')
   let g:webdevicons_enable_startify                        = 1
   let g:webdevicons_enable_unite                           = 1
   let g:webdevicons_enable_vimfiler                        = 1
-  let g:DevIconsDefaultFolderOpenSymbol                    = ''
-  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  let g:DevIconsDefaultFolderOpenSymbol                    = ' '
+  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
   let g:webdevicons_enable_airline_tabline = 1
   let g:webdevicons_enable_airline_statusline = 1
 endif

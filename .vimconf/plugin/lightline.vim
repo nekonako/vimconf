@@ -7,11 +7,11 @@ endfunction
 let g:lightline = {
   \ 'colorscheme': 'palenight',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
+  \   'left': [ [ 'mode', 'paste' ], ['filename' ], ['branchIcon'] ],
   \   'right': [ [ 'cocstatus', 'coccurrentfunction', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
   \ },
   \ 'component_function': {
-  \   'fugitive': 'LightlineFugitive',
+  \   'fugitive': 'FugitiveHead',
   \   'filename': 'LightlineFilename',
   \   'fileformt': 'LightlineFileformat',
   \   'filetype': 'LightlineFiletype',
@@ -19,13 +19,14 @@ let g:lightline = {
   \   'mode': 'LightlineMode',
   \   'ctrlpmark': 'CtrlPMark',
   \   'cocstatus': 'coc#status',
-  \   'coccurrentfunction': 'CocCurrentFunction'
+  \   'coccurrentfunction': 'CocCurrentFunction',
+  \   'branchIcon': 'LighlineBranchIcon',
   \ },
   \ 'component': {
-  \ 'close': '%999X Mash ',
+  \ 'close': '%999X Nako ',
   \},
   \ 'separator': { 'left': '', 'right': '' },
-  \ 'subseparator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '|', 'right': '|' },
  \ 'tabline': {
     \   'left': [ ['buffers'] ],
     \   'right': [ ['close'] ]
@@ -37,6 +38,12 @@ let g:lightline = {
     \   'buffers': 'tabsel'
     \ }
   \ }
+
+function! LighlineBranchIcon()
+    let gitbranch = FugitiveHead()
+    let icon = ' '
+    return icon.gitbranch
+endfunction
 
 function! LightlineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -63,7 +70,7 @@ function! LightlineFugitive()
   try
     if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
       let mark = ' '
-      let branch = fugitive#head()
+      let branch = 'FugitiveHead'
       return branch !=# '' ? mark.branch : ''
     endif
   catch
@@ -153,7 +160,7 @@ let g:lightline.tab = {
       \ 'inactive': [ 'tabnum', 'custom_tabname', 'modified' ] }
 
 let g:lightline.tabline_separator = { 'left': '', 'right': '' }
-let g:lightline.tabline_subseparator = { 'left': '', 'right': '' }
+let g:lightline.tabline_subseparator = { 'left': '|', 'right': '|' }
 
 "  ### BUFFER LINE
 let g:lightline#bufferline#number_map = 2
