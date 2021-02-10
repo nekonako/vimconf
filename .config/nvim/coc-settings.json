@@ -18,7 +18,7 @@
   "diagnostic.messageTarget": "float",
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.virtualText": false,
-  "diagnostic.checkCurrentLine": false,
+  "diagnostic.checkCurrentLine": true,
   "diagnostic.warningSign": "WW",
   "emmet.includeLanguages": { "vue-html": "html", "javascript": "javascriptreact", "jinja2.html": "html" },
   "emmet.showExpandedAbbreviation": "always",
@@ -53,6 +53,11 @@
       "command": "kotlin-language-server",
       "filetypes": ["kotlin"]
     },
+   "rust": {
+    "command": "rust-analyzer",
+    "filetypes": ["rust"],
+    "rootPatterns": ["Cargo.toml", ".zshrc", "main.rs"]
+  }
   },
   "phpls.path": "~/.config/coc/extensions/node_modules/coc-phpls/node_modules/intelephense/",
   "phpls.enable": false,
@@ -64,7 +69,7 @@
     },
     {
       "name": "JavaSE-14",
-      "path": "/usr/lib/jvm/java-14-openjdk",
+      "path": "/usr/lib/jvm/java-14-openjdk"
       }
   ],
   "latex.build.args": [ "-xelatex", "-file-line-error", "-synctex=1", "-interaction=nonstopmode" ],
